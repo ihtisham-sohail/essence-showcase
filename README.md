@@ -19,6 +19,6 @@ Essence Showcase ( Social Centralize ) will help clients have there social appli
 
 ## Screenshots
 
-![login](images/login.jpg)
-![gmail feature](images/gmail-list.jpg)
+![login](src/assets/images/login.jpg)
+![gmail feature](assets/images/gmail-list.jpg)
 ![rbook feature](images/rbook-list.jpg)
