@@ -47,7 +47,7 @@ export class AuthService {
     this.oAuth.loadDiscoveryDocument().then(() => {
       this.oAuth.tryLoginImplicitFlow().then(() => {
         if (this.oAuth.hasValidAccessToken()) {
-          this.oAuth.loadUserProfile().then((userProfile) => {
+          this.oAuth.loadUserProfile().then((userProfile: any) => {
             this.afterSignIn(userProfile);
           });
         }
@@ -92,7 +92,7 @@ export class AuthService {
   // }
 
   afterSignIn(userProfile: any) {
-    this.setUserId(userProfile.sub);
+    this.setUserId(userProfile.info.sub);
     this.setToken(this.oAuth.getAccessToken());
     this.router.navigate(['home']);
   }
