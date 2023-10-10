@@ -1,0 +1,52 @@
+<div class="table-section">
+  <!-- <div *ngIf="isLoading$ | async">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div> -->
+  <h1>Weclome to Gmail</h1>
+  <div class="table-responsive">
+    <table class="table table-striped w-75">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Date</th>
+          <th scope="col">From</th>
+          <th scope="col">Subject</th>
+        </tr>
+      </thead>
+      <tbody class="body-min-height">
+        <tr *ngFor="let obj of gmails$ | async; index as i">
+          <td class="col-sm-1">
+            {{ obj.id }}
+          </td>
+          <td class="col-md-2">
+            {{ obj.date }}
+          </td>
+          <td class="col-md-2">{{ obj.from }}</td>
+          <td class="col-md-5">{{ obj.subject }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="btn-section">
+  <div class="back-btn">
+    <button
+      class="btn btn-dark"
+      *ngIf="currPage > 0"
+      (click)="backPageClicked()"
+    >
+      Back Page
+    </button>
+  </div>
+  <div class="next-btn">
+    <button
+      class="btn btn-dark"
+      *ngIf="nextPageAvl"
+      (click)="nextPageClicked()"
+    >
+      Next Page
+    </button>
+  </div>
+</div>
