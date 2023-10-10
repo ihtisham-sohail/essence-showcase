@@ -1,0 +1,36 @@
+.main-dash {
+  display: flex;
+  flex-direction: column;
+  padding: 2vh 3vw;
+  height: 89vh;
+}
+
+.main-widgets {
+  display: flex;
+  justify-content: flex-start;
+  padding: 4vh 1vw;
+  height: 76vh;
+  .gmail,
+  .rbook,
+  .add-new {
+    height: 29vh;
+    margin: 0 2vw;
+    width: 11vw;
+    box-shadow: 1px 4px 16px -8px;
+    border-radius: 16px;
+    transition: scale 200ms;
+    cursor: pointer;
+    &:hover {
+      scale: 1.1;
+    }
+  }
+
+  .add-new {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #58c2ff;
+    border: 2px dashed #58c2ff;
+    font-size: 75px;
+  }
+}
