@@ -10,6 +10,7 @@ import {
   getGmailDataUrl,
 } from 'src/app/configs/endpoint.constant';
 import { Observable, of } from 'rxjs';
+import { AuthService } from '../../authentication/authentication.serivce';
 
 describe('GmailService', () => {
   let gService: GmailService;
@@ -21,6 +22,8 @@ describe('GmailService', () => {
     'getEmailListIds',
     'getEmailDataById',
   ]);
+
+  const authSpy = jasmine.createSpyObj('AuthService', ['getUserId']);
 
   const labelRes = {
     messages: [
@@ -56,6 +59,7 @@ describe('GmailService', () => {
       providers: [
         GmailService,
         { provide: GmailHTTPService, useValue: apiSpy },
+        { provide: AuthService, useValue: authSpy },
       ],
     });
 

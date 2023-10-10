@@ -22,13 +22,17 @@ export class GmailService {
 
   private totalMails: number = 0;
   private nextPageToken: string = '';
-  userId = '110916484611327720160';
+  userId: string = '';
 
-  constructor(private gmailHttp: GmailHTTPService) {}
+  constructor(
+    private gmailHttp: GmailHTTPService,
+    private auther: AuthService
+  ) {}
 
   getGmailInit(): Observable<IGmail[]> {
     this.tt = 1;
     this.nextPageToken = '';
+    this.userId = this.auther.getUserId() as string;
     return this.getMailList();
   }
 
