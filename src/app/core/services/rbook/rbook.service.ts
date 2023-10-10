@@ -17,13 +17,7 @@ import { AuthService } from '../../authentication/authentication.serivce';
   providedIn: 'root',
 })
 export class RbookService {
-  userId = '110916484611327720160';
-
-  constructor(
-    private auth: AuthService,
-    private oAuth: OAuthService,
-    private httpClient: HttpClient
-  ) {}
+  constructor(private httpClient: HttpClient) {}
 
   getAllPosts(): Observable<IPost[]> {
     return this.httpClient.get<IPost[]>(postListUrl);
