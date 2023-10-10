@@ -1,0 +1,92 @@
+<div class="table-section">
+  <!-- <div *ngIf="isLoading$ | async">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div> -->
+  <h1>Weclome to RBook</h1>
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search . . ."
+      aria-label="search"
+      aria-describedby="basic-addon1"
+      #searchInput
+    />
+  </div>
+  <div class="table-responsive">
+    <table class="table table-striped w-75">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col" (click)="sortBy('id')">
+            ID
+            <span *ngIf="sortState['id']">O</span>
+          </th>
+          <th scope="col" (click)="sortBy('name')">
+            Name
+            <span *ngIf="sortState['name']">O</span>
+          </th>
+          <th scope="col" (click)="sortBy('email')">
+            Email
+            <span *ngIf="sortState['email']">O</span>
+          </th>
+          <th scope="col" (click)="sortBy('postId')">
+            Post ID
+            <span *ngIf="sortState['postId']">O</span>
+          </th>
+          <th scope="col" (click)="sortBy('body')">
+            Message
+            <span *ngIf="sortState['body']">O</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="body-min-height">
+        <tr *ngFor="let obj of postList$ | async; index as i">
+          <td class="col-sm-1">
+            {{ obj.id }}
+          </td>
+          <td class="col-md-2">
+            {{ obj.name }}
+          </td>
+          <td class="col-md-2">
+            {{ obj.email }}
+          </td>
+          <td class="col-sm-1">
+            {{ obj.postId }}
+          </td>
+          <td class="col-md-5">
+            {{ obj.body }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="btn-section">
+  <div class="back-btn">
+    <button
+      class="btn btn-dark"
+      *ngIf="currPage > maxResults"
+      (click)="backPageClicked()"
+    >
+      Back Page
+    </button>
+  </div>
+  <div class="next-btn">
+    <button
+      class="btn btn-dark"
+      *ngIf="currPage < totalPostCount"
+      (click)="nextPageClicked()"
+    >
+      Next Page
+    </button>
+  </div>
+</div>
+<!-- <div
+  class="pagination-numbers"
+  [ngClass]="{ selected: currPage / maxResults === idx + 1 }"
+  *ngFor="let num of pages; index as idx"
+>
+  {{ idx + 1 }}
+</div> -->
