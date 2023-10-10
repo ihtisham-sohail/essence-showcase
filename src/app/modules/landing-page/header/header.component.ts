@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
-    console.log('Test');
+    console.log('Header Component');
   }
   LogoutPressed() {
     this.authService.logOut();

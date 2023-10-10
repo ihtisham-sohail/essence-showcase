@@ -26,7 +26,6 @@ export class RbookService {
   ) {}
 
   getAllPosts(): Observable<IPost[]> {
-    console.log('API Called Rbook');
     return this.httpClient.get<IPost[]>(postListUrl);
   }
 }

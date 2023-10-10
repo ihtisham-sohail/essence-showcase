@@ -14,7 +14,6 @@ export class MailListResolverService implements Resolve<any> {
     return this._store.pipe(
       select(fromGmails.selectGmailList),
       tap((gmailList) => {
-        console.log(gmailList);
         if (!gmailList.length) {
           this._store.dispatch(fromGmails.getGmails());
         }

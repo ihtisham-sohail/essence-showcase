@@ -45,7 +45,6 @@ export class ForemenComponent implements OnInit, AfterViewInit {
         debounceTime(400),
         distinctUntilChanged(),
         switchMap((search) => {
-          console.log(search);
           if (search !== null) {
             this._store.dispatch(
               fromPosts.getSearchedName({ searchFilter: search })

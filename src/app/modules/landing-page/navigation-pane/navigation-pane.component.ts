@@ -9,6 +9,6 @@ export class NavigationPaneComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log('Test');
+    console.log('Navigation Pane Component');
   }
 }
