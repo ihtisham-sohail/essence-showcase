@@ -1,0 +1,18 @@
+.main-side-nav {
+  width: 12vw;
+  height: -webkit-fill-available;
+  padding-top: 30%;
+  background-color: #000000a6;
+  .navigation-menu {
+    padding: 10%;
+    text-align: center;
+    cursor: pointer;
+    transition: scale 200ms;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .navigation-menu:hover {
+    scale: 1.1;
+  }
+}

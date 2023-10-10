@@ -1,0 +1,23 @@
+.landing-page-layout {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.right-content {
+  display: flex;
+  height: 100%;
+  width: 90%;
+  flex-direction: column;
+  justify-content: space-between;
+  .main-section {
+    height: 90%;
+    background: aqua;
+  }
+}
