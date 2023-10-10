@@ -10,20 +10,21 @@ import {
 import { Observable, of, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { gmailAPIBase } from 'src/app/configs/endpoint.constant';
+import { AuthService } from '../authentication/authentication.serivce';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-  constructor(private readonly oAuthService: OAuthService) {}
+  constructor(private readonly auther: AuthService) {}
 
-  // private handleAuthError(err: HttpErrorResponse): Observable<any> {
-  //   //handle your auth error or rethrow
-  //   if (err.status === 401 || err.status === 403) {
-  //     // either refresh the token , or completely logout the user
-  //     this.oAuthService.logOut();
-  //     return of([]);
-  //   }
-  //   return throwError(err);
-  // }
+  private handleAuthError(err: HttpErrorResponse): Observable<any> {
+    //handle your auth error or rethrow
+    if (err.status === 401 || err.status === 403) {
+      // either refresh the token , or completely logout the user
+      this.auther.logOut();
+      return of([]);
+    }
+    return throwError(err);
+  }
 
   intercept(
     request: HttpRequest<unknown>,
@@ -31,12 +32,13 @@ export class TokenInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<unknown>> {
     let modifiedReq = request;
     if (request.url.includes(gmailAPIBase)) {
-      const userToken = this.oAuthService.getAccessToken();
+      const userToken = this.auther.getToken();
       modifiedReq = request.clone({
         headers: request.headers.set('Authorization', `Bearer ${userToken}`),
       });
     }
-    return next.handle(modifiedReq);
-    //.pipe(catchError((x) => this.handleAuthError(x)));
+    return next
+      .handle(modifiedReq)
+      .pipe(catchError((x) => this.handleAuthError(x)));
   }
 }
