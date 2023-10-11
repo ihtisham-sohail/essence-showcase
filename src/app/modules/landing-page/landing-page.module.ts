@@ -6,7 +6,7 @@ import { NavigationPaneComponent } from './navigation-pane/navigation-pane.compo
 import { CommonModule } from '@angular/common';
 import { LandingPageRouteModule } from './landing-page.routes';
 import { DashboardComponent } from '../components/dashboard/dashboard.component';
-import { ForemenComponent } from '../components/rbook/rbook.component';
+import { RbookComponent } from '../components/rbook/rbook.component';
 import { MailListComponent } from '../components/mail-list/mail-list.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -27,7 +27,7 @@ import { PostEffects } from 'src/app/core/store/rbook/rbook.effects';
     FooterComponent,
     NavigationPaneComponent,
     DashboardComponent,
-    ForemenComponent,
+    RbookComponent,
     MailListComponent,
   ],
   imports: [

@@ -21,7 +21,7 @@ import { maxResults } from 'src/app/configs/endpoint.constant';
   templateUrl: './rbook.component.html',
   styleUrls: ['./rbook.component.scss'],
 })
-export class ForemenComponent implements OnInit, AfterViewInit {
+export class RbookComponent implements OnInit, AfterViewInit {
   @ViewChild('searchInput', { static: true }) input: ElementRef;
 
   postList$: any;
