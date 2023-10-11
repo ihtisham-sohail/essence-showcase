@@ -10,7 +10,7 @@ import {
   getGmailDataUrl,
 } from 'src/app/configs/endpoint.constant';
 import { Observable, of } from 'rxjs';
-import { AuthService } from '../../authentication/authentication.serivce';
+import { AuthService } from '../../authentication/authentication.service';
 
 describe('GmailService', () => {
   let gService: GmailService;

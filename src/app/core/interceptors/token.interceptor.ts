@@ -10,7 +10,7 @@ import {
 import { Observable, of, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { gmailAPIBase } from 'src/app/configs/endpoint.constant';
-import { AuthService } from '../authentication/authentication.serivce';
+import { AuthService } from '../authentication/authentication.service';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {

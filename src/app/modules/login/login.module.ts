@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { LoginComponent } from './login.component';
 import { LoginRoutes } from './login.routes';
-import { AuthService } from 'src/app/core/authentication/authentication.serivce';
+import { AuthService } from 'src/app/core/authentication/authentication.service';
 
 @NgModule({
   declarations: [LoginComponent],

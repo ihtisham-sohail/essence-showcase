@@ -10,7 +10,7 @@ import {
   gmailAPIBase,
   getGLabelListUrl,
 } from '../../../configs/endpoint.constant';
-import { AuthService } from '../../authentication/authentication.serivce';
+import { AuthService } from '../../authentication/authentication.service';
 import { GmailHTTPService } from '../../http/gmail-enpoint/gmail-enpoint.service';
 import { GmailResEnum } from 'src/app/shared/enums/gmail.enum';
 

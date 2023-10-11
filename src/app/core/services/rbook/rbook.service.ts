@@ -11,8 +11,6 @@ import {
   getGLabelListUrl,
   postListUrl,
 } from '../../../configs/endpoint.constant';
-import { AuthService } from '../../authentication/authentication.serivce';
-
 @Injectable({
   providedIn: 'root',
 })
