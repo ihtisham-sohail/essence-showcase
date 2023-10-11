@@ -105,10 +105,6 @@ export class AuthService {
     return localStorage.getItem(this._USER_ID);
   }
 
-  onError(error: any) {
-    console.log(error);
-  }
-
   setToken(token: string): void {
     localStorage.setItem(this._TOKEN_KEY, token);
   }
